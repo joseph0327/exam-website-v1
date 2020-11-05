@@ -1,38 +1,235 @@
-.App {
-  text-align: center;
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  font-family: Arial, Helvetica, sans-serif; 
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+/* ----------Navbar------------------*/
+.container-nav{
+  position: sticky;
+  top:0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+  margin-left: 50px;
+
+}
+.wrapper{
+    display: flex;
+    position: relative;
+    flex-direction: colum ;
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login{
+    position: absolute;
+    right:100px;
+    top: 30px;
+    
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ---------- InfoSection / Slider------------------*/
+.container-info {
+  margin:0 auto;
+ 
+  position: relative;
+  height: 500px;
+  
+}
+
+.slide_img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slide_img img{
+  width: 100%;
+  height: 100%;
+}
+ 
+
+#i1, #i2, #i3{
+  display: none;
+}
+
+.pre, .next{
+  width: 12%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  background: rgba(88,88, 88, .4);
+  z-index: 99;
+  cursor: pointer; 
+
+}
+
+.pre{
+  left:0;
+}
+
+.next{
+  right: 0;
+}
+
+.nav{
+  width:100%;
+  height: 11px;
+  bottom: 12%;
+  position: absolute;
+  z-index:99;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
 }
 
-.App-link {
-  color: #61dafb;
+
+.dots{
+  top: -5px;
+  width: 20px;
+  height: 20px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 50%;
+  display: inline-block;
+  background: rgba(0,0,0,.6);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slide_img{
+   z-index: -1;
+}
+
+#i1:checked ~ #one,
+#i2:checked ~ #two,
+#i3:checked ~ #three{
+  z-index: 9;
+}
+
+#i1:checked ~ .nav #dot1,
+#i2:checked ~ .nav #dot2,
+#i3:checked ~ .nav #dot3{
+  background: #fff;
+}
+
+
+/* ---------- LOG IN SECTION------------------*/
+
+.container-login{
+  position: relative;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+ 
+   
+}
+
+
+.close-login{
+  position: absolute;
+  top: 0;
+  right:100px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif; 
+}
+
+.login-wrapper{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  border-radius: 10px;
+  padding: 20px;
+}
+.login-wrapper h1{
+
+  padding-bottom : 20px;
+  border-bottom : 0.5px solid silver;
+}
+
+.login-wrapper form{
+
+  box-sizing: border-box;
+}
+
+form .txt_field{
+  position: relative;
+  margin: 30px 0;
+}
+.login-wrapper label{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.txt_field {
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  height: 40px;
+}
+
+input[type="submit"]{
+  width: 100%;
+  background-color: black;
+  color: #fff;  
+  bottom: 10px;
+}
+.reg{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif; 
+}
+
+.login-wrapper a{
+  padding: 5px;  
+}
+
+/* ---------- REGISTER SECTION------------------*/
+.container-register{
+  position: relative;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+}
+
+.close-register{
+  position: absolute;
+  top: 0;
+  right:100px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif; 
+}
+
+.wrapper-register{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.wrapper-register h1{
+
+  padding-bottom : 20px;
+  border-bottom : 0.5px solid silver;
+}
+
+.wrapper-register label{
+  font-weight: bold;
+  margin-bottom: 5px;
 }
